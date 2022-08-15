@@ -1,0 +1,30 @@
+﻿@using Dekorasyon.WebApp.Models
+@using Blog.Entities
+@{
+    List<Post> list = CacheHelper.GetPostFromCache();
+}
+<!-- agents content -->
+@foreach (Post post in list)
+{
+
+    <li>
+        <div class="aa-single-agents">
+            <div class="aa-agents-img">
+             <a href="/Arac-@post.Id"><img src="~/images/@post.PostImageFilename" alt="agent member image"></a>
+            </div>
+            <div class="aa-agetns-info">
+                <div class="aa-agent-social">
+                    <p>
+                        <h4><a href="/Arac-@post.Id">@post.Title</a></h4>
+                    </p>
+                </div>
+                <div class="aa-agent-social">
+                    <p>
+                        <span>@post.Description</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </li>
+
+}

@@ -1,0 +1,135 @@
+﻿@using Dekorasyon.WebApp.Models
+@using Blog.Entities
+@{
+    List<Category> list = CacheHelper.GetCategoriesFromCache();
+
+}
+@{
+    ViewBag.Title = "ByCategory";
+    Layout = "~/Views/Shared/_LayoutAnaSite.cshtml";
+}
+<section id="aa-property-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-property-header-inner">
+                    <ol class="breadcrumb">
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="fh5co-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-staff">
+                    <a href="/Ekonomik-1"><img class="img-responsive" src="~/images/binek araçlar.png"></a>
+                    <h3>Ekonomik Araçlar</h3>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-4 text-center animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-staff">
+                    <a href="/Kategori-2"><img class="img-responsive" src="~/images/arazi araçları.png"></a>
+                    <h3>Suv Araçlar</h3>
+                </div>
+            </div>
+
+            <div class="col-sm-4 text-center animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-staff">
+                    <a href="/Kategori-3"><img class="img-responsive" src="~/images/spor araçlar.png"></a>
+                    <h3>Yüksek Sınıf Araçlar</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #fh5co-about .fh5co-staff img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: #fff;
+    -webkit-box-shadow: 0px 10px 30px -13px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 0px 10px 30px -13px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 10px 30px -13px rgba(0, 0, 0, 0.21);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+img {
+    height: 60px;
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.text-center {
+    text-align: center;
+}
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    background: #fff;
+    color: #848484;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333333;
+    background-color: #fff;
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+user agent stylesheet
+html {
+    color: -internal-root-color;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+::selection {
+    color: #fcfcfc;
+    background: #44C662;
+}
+</style>

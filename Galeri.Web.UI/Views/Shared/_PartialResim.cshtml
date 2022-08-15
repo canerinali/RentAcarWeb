@@ -1,0 +1,15 @@
+﻿@using Dekorasyon.WebApp.Models
+@using Entities
+@using Blog.Entities
+@model List<Resim>
+@{
+    List<Resim> list = Model;
+}
+
+    <div class="aa-properties-details-img">
+        @foreach (Resim res in list)
+        {
+            <img src="@res.ResimUrl" alt="img">
+        }
+    </div>
+    

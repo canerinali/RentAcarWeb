@@ -1,0 +1,81 @@
+﻿@using Entities
+@model Entities.Aracistek
+@{
+    ViewBag.Title = "Aracistek";
+    Layout = "~/Views/Shared/_LayoutAnaSite.cshtml";
+}
+<section id="aa-property-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-property-header-inner">
+                    <ol class="breadcrumb">
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="aa-contact">
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-contact-area">
+                        <div class="aa-contact-bottom">
+                            <div class="aa-title">
+                                <h2>Bize Ulaşın</h2>
+                                <span></span>
+                                <p>Araç Kiralamak İsterseniz Bizimle İletişim Kurabilirsiniz..<strong class="required">*</strong></p>
+                            </div>
+                            <div class="aa-contact-form">
+                                <form class="contactform">
+                                    <p class="comment-form-author">
+                                        <label for="author">Ad Soyad<span class="required">*</span></label>
+
+                                        @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+
+                                    </p>
+                                    <p class="comment-form">
+                                        <label for="email">Email <span class="required">*</span></label>
+                                        @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @name = "author", @type = "email", @class = "form-control" } })
+                                    </p>
+                                    <p class="comment-form">
+                                        <label for="author">Marka </label>
+                                        @Html.EditorFor(model => model.Marka, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+                                    </p>
+                                    <p class="comment-form-url">
+                                        <label for="author">Model </label>
+                                        @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+
+                                    </p>
+                                    <p class="comment-form-url">
+                                        <label for="author">Fiyat </label>
+                                        @Html.EditorFor(model => model.Fiyat, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+                                    </p>
+                                    <p class="comment-form-url">
+                                        <label for="author">Km </label>
+                                        @Html.EditorFor(model => model.Km, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+
+                                    </p>
+                                    <p class="comment-form-url">
+                                        <label for="author">Telefon </label>
+                                        @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+                                    </p>
+                                    <p class="comment-form-comment">
+                                        <label for="comment">Mesaj</label>
+                                        @Html.TextAreaFor(model => model.Decreption, 8, 45, new { @name = "comment", @class = "form-control" })
+                                    </p>
+                                    <p class="form-submit">
+                                        <input type="submit" name="submit" class="aa-browse-btn" value="Bildir">
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

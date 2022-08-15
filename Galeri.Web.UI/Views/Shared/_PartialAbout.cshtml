@@ -1,0 +1,36 @@
+﻿@using Blog.Entities
+@using Dekorasyon.WebApp.Models
+@{
+    List<About> list = CacheHelper.GetAboutsFromCache();
+}
+<!-- About us -->
+<section id="aa-about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-about-us-area">
+                    <div class="row">
+                        @foreach (About about in list)
+                        {
+                            <div class="col-md-5">
+                                <div class="aa-about-us-left">
+                                    <img src="~/images/@about.AboutImage" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="aa-about-us-right">
+                                    <div class="aa-title">
+                                        <h2>@about.Title</h2>
+                                        <span></span>
+                                    </div>
+                                    <p>@about.Description</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / About us -->

@@ -1,0 +1,164 @@
+﻿@using Blog.Entities;
+@model Blog.Entities.Post
+@{
+    ViewBag.Title = "Post Düzenle";
+}
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+<div class="container text-lg">
+    @using (Html.BeginForm("Edit", "YonetimPost", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-12 col-md-offset-4">
+                <div class="col-md-10">
+                    <h4 class="text-center">Post Düzenle</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.UserNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Vites, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Vites, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.YakıtTipi, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.YakıtTipi, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CarType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CarType, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Text, 5, 30, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DayPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-12">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.DayPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <div class="col-md-6 col-md-offset-4 text-xl-left">
+                                    @Html.Label("₺", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MonthlyPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-12">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.MonthlyPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <div class="col-md-6 col-md-offset-4 text-xl-left">
+                                    @Html.Label("₺", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IsDraft, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.IsDraft)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirmaId, "FirmaName", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("FirmaId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CategoryId, "Kategori", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <img src="~/images/@Model.PostImageFilename" class="img-profile rounded-bottom" width="700" height="350" />
+                                @Html.HiddenFor(model => model.PostImageFilename)
+                                @Html.Label("Vitrin:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <input type="file" name="PostImage" id="PostImage" class="form-control" /><br />
+                                <span class="fa fa-sign">&nbsp;</span>
+                                <span><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @foreach (var item in Model.Resims.Where(x => x.PostID == Model.Id))
+                                {
+                                    <img src="@item.ResimUrl" class="img-profile rounded-bottom" width="200" height="200" />
+                                    <label><a href="@Url.Action("ResimSil","YonetimPost", new { ID = item.Id})">[x]</a></label>
+                                }
+                                @Html.Label("Resimler:", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                                <input type="file" multiple name="PostImageDetay" id="PostImageDetay" class="form-control" /> <br />
+
+                                <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                                <span><i>Resim için Lütfen geçerli bir resim formatı kullanın.</i></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <img src="~/img/@Model.ExpertizImage" class="img-profile rounded-bottom" width="700" height="350" />
+                                @Html.HiddenFor(model => model.ExpertizImage)
+                                @Html.Label("Expertiz:", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <input type="file" name="PostImage2" id="PostImage2" class="form-control" /><br />
+                                <span class="fa fa-sign">&nbsp;</span>
+                                <span><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-offset-4">
+                        <div class="form-group text-center">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-success">
+                                    <span class="fa fa-save"></span> Kaydet
+                                </button>
+                                <a href="/YonetimPost/Index" class="btn btn-default">
+                                    <span class="fa fa-arrow-circle-left"></span> Back to List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

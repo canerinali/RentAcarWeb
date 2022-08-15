@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MCORA RENTAL - Araç Kiralama</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/images/mcora.jpeg" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="~/HomeProperty/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="~/HomeProperty/css/bootstrap.css" rel="stylesheet">
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="~/HomeProperty/css/slick.css">
+    <!-- price picker slider -->
+    <link rel="stylesheet" type="text/css" href="~/HomeProperty/css/nouislider.css">
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="~/HomeProperty/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <!-- Theme color -->
+    <link id="switcher" href="~/HomeProperty/css/theme-color/default-theme.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>
+    <!-- Main style sheet -->
+    <link href="~/HomeProperty/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/homestate/css/style.css">
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- maine style -->
+    <link rel="stylesheet" href="~/css/sr/style.css" type='text/css' />
+    <!-- carousel style -->
+    <link rel="stylesheet" href="~/css/owl.carousel.css" type='text/css' />
+    <!-- responsive menu style -->
+    <link rel="stylesheet" href="~/css/prettyMenu.css">
+    <link rel="stylesheet" href="~/css/hover.css">
+    <link rel="stylesheet" href="~/css/hamburgers.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- goodle font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,900" rel="stylesheet">
+    <!-- font-car service icon -->
+    <link rel="stylesheet" href="~/css/fonts/car-serive-icon.css" type='text/css'>
+    <!-- popup style -->
+    <link rel="stylesheet" href="~/css/magnific-popup.css" type='text/css' />
+    <!-- Datapick -->
+    <link rel="stylesheet" href="~/css/flatpickr.css">
+    <!-- font-awesome icon -->
+    <link rel="stylesheet" href="~/css/fonts/font-awesome/css/font-awesome.min.css" type='text/css'>
+
+
+    <!-- Custom styles for this template -->
+    <link href="~/forest-time/style.css" rel="stylesheet">
+
+    <!-- Responsive styles for this template -->
+    <link href="~/forest-time/css/responsive.css" rel="stylesheet">
+
+    <!-- Colors for this template -->
+    <link href="~/forest-time/css/colors.css" rel="stylesheet">
+
+    <!-- Version Garden CSS for this template -->
+    <link href="~/forest-time/css/version/garden.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="~/HomeProperty/js/jquery.min.js"></script>
+
+</head>
+<body class="aa-price-range">
+    <!-- Pre Loader -->
+    <div id="aa-preloader-area">
+        <div class="pulse"></div>
+    </div>
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start header section -->
+    <header id="aa-header">
+    </header>
+    <!-- End header section -->
+    <!-- Start menu section -->
+    <section id="aa-menu-area">
+        <nav class="navbar navbar-default main-navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- LOGO -->
+                    <!-- Text based logo -->
+                    <a href="/"><img src="~/images/mcora.jpeg" alt="" /></a>
+                    <!-- Image based logo -->
+                    <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
+                        <li class="active"><a href="/">Anasayfa</a></li>
+                        <li><a href="/Kategoriler">Araç Listesi</a></li>
+                        <li><a href="/Hakkimizda">Hakkımızda</a></li>
+                        <li><a href="/Blog">Blog</a></li>
+                        <li><a href="/Iletisim">İletişim</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+    </section>
+    <!-- End menu section -->
+    @RenderBody()
+
+   
+
+    <!-- / Footer -->
+    <!-- jQuery library -->
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="~/HomeProperty/js/bootstrap.js"></script>
+    <!-- slick slider -->
+    <script type="text/javascript" src="~/HomeProperty/js/slick.js"></script>
+    <!-- Price picker slider -->
+    <script type="text/javascript" src="~/HomeProperty/js/nouislider.js"></script>
+    <!-- mixit slider -->
+    <script type="text/javascript" src="~/HomeProperty/js/jquery.mixitup.js"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="~/HomeProperty/js/jquery.fancybox.pack.js"></script>
+    <!-- Custom js -->
+    <script src="~/HomeProperty/js/custom.js"></script>
+    <!-- Load JS here for greater good =============================-->
+
+
+    <script src="~/js/flatpickr.js"></script>
+    <!-- Single Page Nav Class menu -->
+    <script src="~/js/jquery.singlePageNav.js"></script>
+    <!-- all scripts -->
+    <script type="text/javascript" src="~/js/script.js"></script>
+
+
+</body>
+</html>

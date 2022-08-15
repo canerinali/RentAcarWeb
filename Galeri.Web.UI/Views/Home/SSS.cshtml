@@ -1,0 +1,23 @@
+﻿@using Entities
+@model List<SSS>
+@{
+    ViewBag.Title = "SSS";
+    Layout = "~/Views/Shared/_LayoutSSS.cshtml";
+}
+
+
+<div class="extra7 " id="faq" style="margin-top:11%;">
+    <div class="container ">
+
+        <div class="title-black ">Sıkça Sorulan Sorular</div>
+        @foreach (var item in Model)
+        {
+            <div class="eight block-center">
+                <div class="round accordion_title ">@item.Questions</div>
+                <div class="accordion_hide ">@item.Answers </div>
+
+            </div>
+        }
+        <div class="clear"></div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿@using Blog.Entities
+@model List<Resim>
+
+@foreach (var item in Model)
+{
+    <div class="aa-properties-details-img">
+        <img src="@item.ResimUrl" alt="img">
+    </div>
+}

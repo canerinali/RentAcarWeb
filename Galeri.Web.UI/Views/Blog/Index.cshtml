@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Entities.GaleriBlog>
+@{
+    ViewBag.Title = "Notlarım";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-1">
+            <h2 class="text-center">@ViewBag.Title</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-md-offset-1">
+            <p>
+                <a href="/YonetimBlog/Create" class="btn btn-primary">
+                    <span class="fa fa-edit"> Yeni</span>
+                </a>
+            </p>
+            <table class="table">
+                <tr>
+                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Text)
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </td>
+                        <td width="250">
+                            <a href="/YonetimBlog/Edit/@item.Id" class="btn btn-lg" title="Düzenle">
+                                <span class="fa fa-edit"></span>
+                            </a>
+                            <a href="/YonetimBlog/Details/@item.Id" class="btn btn-lg" title="Detaylar">
+                                <span class="fa fa-search"></span>
+                            </a>
+                            <a href="/YonetimBlog/Delete/@item.Id" class="btn btn-lg" title="Kaldır">
+                                <span class="fa fa-trash"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+

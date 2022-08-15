@@ -1,0 +1,91 @@
+﻿@using Entities
+@using Dekorasyon.WebApp.Models
+@using Blog.Entities
+@using Galeri.Web.UI.ViewModels
+@model  AboutListModel
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_LayoutAnaSite.cshtml";
+}
+<body class="aa-price-range">
+    <section id="aa-property-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <ol class="breadcrumb">
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @foreach (var item in Model.about)
+    {
+        <section id="aa-about-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-about-us-area">
+                            <div class="row">
+                                <div class="aa-about-us-right">
+                                    <div class="aa-title">
+                                        <h2>@item.Title</h2>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="aa-about-us-left">
+                                        <img src="~/images/@item.AboutImage" alt="image">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="aa-about-us-right">
+                                        <p>@item.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+</body>
+@*
+    @{
+        ViewBag.Title = "Hakkimizda";
+        Layout = "~/Views/Shared/_LayoutAnaSite.cshtml";
+    }
+
+    @foreach (var item in Model)
+    {
+        <section id="aa-about-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-about-us-area">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="aa-about-us-left">
+                                        <img src="~/images/@item.AboutImage" alt="image">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="aa-about-us-right">
+                                        <div class="aa-title">
+                                            <h2>@item.Title</h2>
+                                            <span></span>
+                                        </div>
+                                        <p>@item.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }*@

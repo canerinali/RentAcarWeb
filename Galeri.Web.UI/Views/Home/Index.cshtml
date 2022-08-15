@@ -1,0 +1,328 @@
+﻿@{ Layout = "~/Views/Shared/_LayoutAnaSite.cshtml"; }
+@Html.Partial("_PartialSlider")
+@using Blog.Entities
+@model List<Post>
+<!-- Latest property -->
+<section id="aa-latest-property">
+    <div class="container">
+        <div class="aa-latest-property-area">
+            <div class="aa-title">
+                <span><h2>Ekonomik Araçlar</h2></span>
+            </div>
+            <div class="" style="display: inline; float: right; width: 100%;text-align: right;">
+                <a href="~/Kategori-1" style="font-weight: bold; /* font-size: 30px; */font-weight: bold;line-height: 40px;margin: 0;">Tümünü Gör &nbsp;&gt;</a>
+            </div>
+            <div class="ppb_wrapper">
+
+                <div class="ppb_car_grid one nopadding" style="margin-bottom: 30px;">
+                    <div class="page_content_wrapper page_main_content sidebar_content full_width fixed_column">
+                        <div>
+
+                            <div id="16379722761493507413" class="portfolio_filter_wrapper gallery grid three_cols" data-columns="3">
+                                @foreach (Post post in Model.Where(x => x.Category.Title == "Ekonomik Araçlar").Take(3))
+                                {
+                                    <div class="element grid classic3_cols animated1">
+                                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder" style="background-image: url('/images/@post.PostImageFilename'); background-repeat: no-repeat;">
+                                            <a class="car_image" href="https://wa.me/08231231412?text=Merhaba%20@(post.Title)%20kiralamak%20istiyorum"></a>
+                                            <div class="portfolio_info_wrapper">
+                                                <div class="car_attribute_wrapper">
+                                                    <h4>
+                                                        @if (string.IsNullOrEmpty(post.Title) == false && post.Title.Length > 17)
+                                                        {
+                                                            @(post.Title.Substring(0, 17) + "...")
+                                                        }
+                                                        else
+                                                        {
+                                                            @post.Title
+                                                        }
+                                                    </h4>
+                                                    <div class="car_attribute_wrapper_icon">
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-user"></div>
+                                                            <div class="car_attribute_content">@post.UserNumber</div>
+                                                        </div>
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-briefcase"></div>
+                                                            <div class="car_attribute_content">@post.YakıtTipi</div>
+                                                        </div>
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-panel"></div>
+                                                            <div class="car_attribute_content">@post.Vites</div>
+                                                        </div>
+                                                    </div>
+                                                    <br class="clear" />
+                                                </div>
+                                                <div class="car_attribute_price">
+                                                    <div class="car_attribute_price_day three_cols"><span class="single_car_currency">TL</span><span class="single_car_price">@post.DayPrice</span><span class="car_unit_day">Günlük</span><span>Başlayan Fiyatlarla</span></div>
+                                                </div>
+                                                <br class="clear" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aa-title">
+                <span><h2>Yüksek Sınıf Araçlar</h2></span>
+            </div>
+            <div class="" style="display: inline; float: right; width: 100%;text-align: right;">
+                <a href="~/Kategori-3" style="font-weight: bold; /* font-size: 30px; */font-weight: bold;line-height: 40px;margin: 0;">Tümünü Gör &gt;</a>
+            </div>
+
+            <div class="ppb_wrapper">
+
+                <div class="ppb_car_grid one nopadding" style="margin-bottom: 30px;">
+                    <div class="page_content_wrapper page_main_content sidebar_content full_width fixed_column">
+                        <div>
+
+                            <div id="16379722761493507413" class="portfolio_filter_wrapper gallery grid three_cols" data-columns="3">
+                                @foreach (Post post in Model.Where(x => x.Category.Title == "Yüksek Sınıf Araçlar").Take(3))
+                                {
+                                    <div class="element grid classic3_cols animated1">
+                                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder" style="background-image: url('/images/@post.PostImageFilename'); background-repeat: no-repeat;">
+                                            <a class="car_image" href="https://wa.me/08231231412?text=Merhaba%20@(post.Title)%20kiralamak%20istiyorum"></a>
+                                            <div class="portfolio_info_wrapper">
+                                                <div class="car_attribute_wrapper">
+                                                    <h4>
+                                                        @if (string.IsNullOrEmpty(post.Title) == false && post.Title.Length > 17)
+                                                        {
+                                                            @(post.Title.Substring(0, 17) + "...")
+                                                        }
+                                                        else
+                                                        {
+                                                            @post.Title
+                                                        }
+                                                    </h4>
+                                                    <div class="car_attribute_wrapper_icon">
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-user"></div>
+                                                            <div class="car_attribute_content">@post.UserNumber</div>
+                                                        </div>
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-briefcase"></div>
+                                                            <div class="car_attribute_content">@post.YakıtTipi</div>
+                                                        </div>
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-panel"></div>
+                                                            <div class="car_attribute_content">@post.Vites</div>
+                                                        </div>
+                                                    </div>
+                                                    <br class="clear" />
+                                                </div>
+                                                <div class="car_attribute_price">
+                                                    <div class="car_attribute_price_day three_cols"><span class="single_car_currency">TL</span><span class="single_car_price">@post.DayPrice</span><span class="car_unit_day">Günlük</span><span>Başlayan Fiyatlarla</span></div>
+                                                </div>
+                                                <br class="clear" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aa-title">
+                <span><h2>Suv Araçlar</h2></span>
+            </div>
+            <div style="display: inline; float: right; width: 100%;text-align: right;">
+                <a href="~/Kategori-2" style="font-weight: bold; /* font-size: 30px; */font-weight: bold;line-height: 40px;margin: 0;">Tümünü Gör &gt;</a>
+            </div>
+            <div class="ppb_wrapper">
+
+                <div class="ppb_car_grid one nopadding" style="margin-bottom: 30px;">
+                    <div class="page_content_wrapper page_main_content sidebar_content full_width fixed_column">
+                        <div>
+
+                            <div id="16379722761493507413" class="portfolio_filter_wrapper gallery grid three_cols" data-columns="3">
+                                @foreach (Post post in Model.Where(x => x.Category.Title == "Suv Araçlar").Take(3))
+                                {
+                                    <div class="element grid classic3_cols animated1">
+                                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder" style="background-image: url('/images/@post.PostImageFilename'); background-repeat: no-repeat;">
+                                            <a class="car_image" href="https://wa.me/08231231412?text=Merhaba%20@(post.Title)%20kiralamak%20istiyorum"></a>
+                                            <div class="portfolio_info_wrapper">
+                                                <div class="car_attribute_wrapper">
+                                                    <h4>
+                                                        @if (string.IsNullOrEmpty(post.Title) == false && post.Title.Length > 17)
+                                                        {
+                                                            @(post.Title.Substring(0, 17) + "...")
+                                                        }
+                                                        else
+                                                        {
+                                                            @post.Title
+                                                        }
+                                                    </h4>
+                                                    <div class="car_attribute_wrapper_icon">
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-user"></div>
+                                                            <div class="car_attribute_content">@post.UserNumber</div>
+                                                        </div>
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-briefcase"></div>
+                                                            <div class="car_attribute_content">@post.YakıtTipi</div>
+                                                        </div>
+                                                        <div class="one_fourth">
+                                                            <div class="car_attribute_icon ti-panel"></div>
+                                                            <div class="car_attribute_content">@post.Vites</div>
+                                                        </div>
+                                                    </div>
+                                                    <br class="clear" />
+                                                </div>
+                                                <div class="car_attribute_price">
+                                                    <div class="car_attribute_price_day three_cols"><span class="single_car_currency">TL</span><span class="single_car_price">@post.DayPrice</span><span class="car_unit_day">Günlük</span><span>Başlayan Fiyatlarla</span></div>
+                                                </div>
+                                                <br class="clear" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Latest property -->
+<!-- Service section -->
+<section id="aa-service">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align:center">
+                <div class="aa-service-area">
+                    <div class="aa-title">
+                        <span><h2>Hizmetlerimiz</h2></span>
+                        <br /><br />
+                        <p>
+                            Araç kiralamak istiyorsanız doğru adres Mcora Car Rental aradığınız aracı en uygun şartlarda size sunar.
+                        </p>
+                    </div>
+                    <!-- service content -->
+                    <div class="aa-service-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="aa-single-service">
+                                    <div class="aa-service-icon">
+                                        <a href="/AracAlmak"><span class="fa fa-car"></span></a>
+                                    </div>
+                                    <div class="aa-single-service-content">
+                                        <h4><a href="/uzundonemarac">Uzun dönem kiralamak istiyorum</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/Konsinye">
+                                    <div class="aa-single-service">
+                                        <div class="aa-service-icon">
+                                            <a href="/Konsinye"><span class="glyphicon glyphicon-random"></span></a>
+                                        </div>
+                                        <div class="aa-single-service-content">
+                                            <h4><a href="/Konsinye">Konsinye</a></h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="aa-single-service">
+                                    <div class="aa-service-icon">
+                                        <span class="fa fa-star-half-empty"></span>
+                                    </div>
+                                    <div class="aa-single-service-content">
+                                        <h4><a>Güvenli Hizmet</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Service section -->
+<!-- Our Agent Section-->
+<section id="aa-agents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-agents-area">
+                    <div class="main-heading-holder">
+                        <div class="main-heading sytle-2" style="text-align:center">
+                            <h2>Kısa Dönem Araçlar</h2>
+                        </div>
+                    </div>
+                    <!-- agents content -->
+                    <div class="aa-agents-content" style="margin:5%">
+                        <ul class="aa-agents-slider">
+                            @foreach (Post post in Model)
+                            {
+                                <li class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 293px;">
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img style="height:240px" src="~/images/@post.PostImageFilename" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#" tabindex="-1">@post.Category.Title</a></h4>
+                                            <span>Aylık Tutarı</span>
+
+                                            <span>@post.MonthlyPrice</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- / Our Agent Section-->
+<!-- Promo Banner Section -->
+<section id="aa-promo-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-promo-banner-area">
+                    <h3>Mcora Car Rental GÜVENCESİYLE</h3>
+                    <p>Doğru Ve Güvenilir Hizmetle Müşterilerimizi Mutlu Etmeye Devam Ediyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@Html.Partial("_PartialArac")
+<!-- / Client brand -->
+<!-- Footer -->
+<a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=905456530153"><img class="imgWpMobile" src="/images/whatsapp-destek-siyah.png" /></a>
+<!-- / Client brand -->
+<!-- Footer -->
+<link href="~/css/siteylesheet.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+    .whatsapp {
+        right: 0;
+        top: 50%;
+        position: fixed;
+        margin-top: -125px;
+        z-index: 999999;
+    }
+</style>
+<script>
+    $('#inputCity').on('change', function () {
+        var data = $('#inputCity').val();
+        console.log(data)
+        $('.tm-btn-search').attr('href', '/Kategori-' + data)
+    })
+</script>

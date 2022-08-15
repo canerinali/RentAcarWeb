@@ -1,0 +1,29 @@
+﻿@using Dekorasyon.WebApp.Models
+@using Entities
+@{
+    List<Firma> list = CacheHelper.GetFirmaFromCache();
+}
+<section id="aa-client-brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-client-brand-area">
+                    <ul class="aa-client-brand-slider">
+                        @foreach (Firma cat in list)
+                        {
+                            <li>
+                                <div class="aa-client-single-brand">
+                                    <a href="~/Firma-@cat.Id">
+                                        <img src="~/images/firmalar/@cat.FirmaImage" alt="brand image">
+                                        <label>@cat.Posts.Count()</label>
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

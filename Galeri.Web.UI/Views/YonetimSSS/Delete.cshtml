@@ -1,0 +1,48 @@
+﻿@using Dekorasyon.WebApp
+@model Entities.SSS
+@{ /**/
+
+    ViewBag.Title = "SSS Sil"; }
+<div class="row">
+    <div class="container">
+        <div class="col-12">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>@ViewBag.Title</h2>
+                <h3>Silmek istediğinize emin misiniz?</h3>
+            </div>
+            <hr />
+            <dl class="col-10 text-lg">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Questions)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Questions)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Answers)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Answers)
+                </dd>
+            </dl>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="form-actions no-color">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-danger">
+                                    <span class="fa fa-save"></span> Sil
+                                </button>
+                                <a href="/YonetimSSS/Index" class="btn btn-default">
+                                    <span class="fa fa-arrow-circle-left"></span>Back to List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+        </div>
+    </div>
+</div>

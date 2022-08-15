@@ -1,0 +1,241 @@
+﻿@using Dekorasyon.WebApp.Models
+@using Blog.Entities
+@using Galeri.Web.UI.ViewModels
+@model  Post
+
+@{
+    <link rel="stylesheet" href="~/homestate/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/homestate/csscss/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/homestate/csscss/bootstrap.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="~/homestate/csscss/superfish.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/homestate/csscss/flexslider.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/homestate/csscss/magnific-popup.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="~/homestate/csscss/bootstrap-datepicker.min.css">
+    <!-- CS Select -->
+    <link rel="stylesheet" href="~/homestate/csscss/cs-select.css">
+    <link rel="stylesheet" href="~/homestate/csscss/cs-skin-border.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    ViewBag.Title = "PostDetail";
+    Layout = "~/Views/Shared/_LayoutAnaSite.cshtml";
+}
+
+
+<!-- Start Proerty header  -->
+@foreach (var post in Model.posts)
+{
+    <section id="aa-property-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-property-header-inner">
+                        <ol class="breadcrumb">
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+    <!-- End Proerty header  -->
+    <!-- Start Properties  -->
+    @foreach (var post in Model.posts)
+    {
+        <section id="aa-properties">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="aa-properties-content">
+                            <!-- Start properties content body -->
+                            <h3> @post.Title</h3>
+                            <hr />
+                            <div class="aa-properties-details">
+                                @Html.Partial("_PartialResim", Model.resims)
+                                <!-- Properties social share -->
+                                <div class="aa-properties-social">
+                                    <ul>
+                                        <li>Share</li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="aa-properties-details-img">
+                                    <img src="~/img/@post.ExpertizImage" alt="img">
+                                </div>
+                                <!-- Nearby properties -->
+                                <div class="aa-nearby-properties">
+                                    <div class="aa-nearby-properties-area">
+
+                                        <section id="aa-agents">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <div class="aa-agents-area">
+                                                            <div class="aa-title">
+                                                                <h2>Benzer Araçlar</h2>
+                                                                <span></span>
+                                                            </div>
+                                                            <!-- agents content -->
+                                                            <div class="aa-agents-content">
+                                                                <ul class="aa-agents-slider">
+                                                                    @Html.Partial("_PartialDetailRecent")
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <h3 style="text-align:end;">Araç No: @post.Id</h3>
+                    <hr />
+                    <!-- Start properties sidebar -->
+                    <div class="col-md-3">
+                        <aside class="aa-properties-sidebar">
+                            <div class="aa-properties-info">
+                                <table style="font-size:25px; font-weight:bold;">
+                                    <tbody>
+                                        <tr class="col-12">
+                                            <td>TL</td>
+
+                                            <td align="right"><span class="aa-price">₺@post.Price</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <hr />
+                        </aside>
+                        <hr />
+                        <aside class="aa-properties-sidebar">
+                            <div class="col-12">
+                                <table>
+                                    <tbody>
+                                        <tr class="col-12" style="font-size:large; font-weight:bold;">
+                                            <td>Kilometre</td>
+
+                                            <td align="right"><span> @post.Km Km</span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Dış Renk</td>
+
+                                            <td align="right"><span>@post.DisRenk</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>İç Renk</td>
+
+                                            <td align="right"><span>@post.IcRenk</span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Motor Hacmi</td>
+
+                                            <td align="right"><span>@post.MotorHacmi</span>cc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Beygir Gücü</td>
+
+                                            <td align="right"><span>@post.BeygirGücü</span>PS</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Çekiş Tipi</td>
+
+                                            <td align="right"><span>@post.CekisTipi</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Yakıt Tipi</td>
+
+                                            <td align="right"><span>@post.YakıtTipi</span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Vites</td>
+
+                                            <td align="right"><span>@post.Vites</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </aside>
+                        <aside class="aa-properties-sidebar text-center">
+                            <hr />
+                            <h2>Araç Özellikleri</h2>
+                            <div class="aa-properties-info">
+                                <p>@post.Text</p>
+                            </div>
+                            <hr />
+                        </aside>
+
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <aside class="aa-properties-sidebar">
+                            <div class="aa-properties-info">
+                                <h2>0212-809-05-84</h2>
+                                <p>info@kgmotors.com.tr</p>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <hr />
+                        <aside class="aa-properties-sidebar">
+                            <h3>Serdar Kaya</h3>
+                            <div class="aa-properties-info">
+                                <h4>0532-710-07-82</h4>
+                                <p>serdar@kgmotors.com.tr</p>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <hr />
+                        <aside class="aa-properties-sidebar">
+                            <h2>Expertiz Bilgisi</h2>
+                            <div class="aa-properties-info">
+                                <p>@post.Description</p>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <hr />
+                        <aside class="aa-properties-sidebar">
+                        <h2>Sosyal Medya</h2>
+                        <div class="aa-properties-info">
+                            <p style="font-size:50px;"><a href="https://kayaotomotivbeylikduzu.sahibinden.com/"><img class="imgess" src="~/images/com.sahibinden.jpg" alt="img"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-instagram"></span></p>
+                        </div>
+                    </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+	<style>
+    .imgess{
+        width:50px;
+        height:50px;
+    }
+    .iconify{
+        color:yellow;
+    }
+    .fa.fa-instagram {
+        color: transparent;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+</style>

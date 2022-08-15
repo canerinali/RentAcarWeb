@@ -1,0 +1,26 @@
+﻿@using Dekorasyon.WebApp.Models
+@using Blog.Entities
+@{
+    List<Post> list = CacheHelper.GetPostFromCache();
+}
+<!-- Start Single properties sidebar -->
+<div class="aa-properties-single-sidebar">
+    <h3>Populer Araçlar</h3>
+    @foreach (Post post in list)
+    {
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="/Arac-@post.Id">
+                        <img class="media-object" src="~/images/@post.PostImageFilename" alt="img">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="/Arac-@post.Id">@post.Title</a></h4>
+                    <p>@post.Text</p>
+                    <span>₺@post.Price</span>
+                </div>
+            </div>
+    }
+
+</div>

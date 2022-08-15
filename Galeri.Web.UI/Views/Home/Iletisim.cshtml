@@ -1,0 +1,82 @@
+﻿@using Blog.Entities
+@model Blog.Entities.Contact
+@{
+    ViewBag.Title = "İletisim";
+    Layout = "~/Views/Shared/_LayoutAnaSite.cshtml";
+}
+
+<section id="aa-property-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-property-header-inner">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Proerty header  -->
+
+<section id="aa-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-contact-area">
+                    <div class="aa-contact-top">
+                        <div class="aa-contact-top-left">
+                            <iframe width="100%" height="450" frameborder="0" allowfullscreen="" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d447.52617975313257!2d28.54253611523454!3d41.012449526859456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b567cd1af2b699%3A0x5b229ee36628d01f!2sMCORA%20-%20CAR%20RENTAL!5e0!3m2!1str!2str!4v1638049668974!5m2!1str!2str"></iframe>
+                        </div>
+                        <div class="aa-contact-top-right">
+                            <h2>İletişim</h2>
+                            <p>
+                                Mcora Car Rental Olarak Türkiye'de Firmamız Kurumsal Olarak Tektir.
+                            </p>
+                            <p><i class="fa fa-map-marker"></i>  Ekinoba Mahallesi, Çanakkale Sokak, No:5 KAT:1 Ofis:4 Iconova Center, 34535 Büyükçekmece/İstanbul</p>
+                            <ul class="contact-info-list">
+                                <li> <i class="fa fa-phone"></i> 0545-653-01-53</li>
+                                <li> <i class="fa fa-envelope-o"></i> info@mcoracarrental.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm())
+                    {
+                        <div class="aa-contact-bottom">
+                            <div class="aa-title">
+                                <span><h2>Bize Ulaşın</h2></span>
+                                <p>E-posta hesabınız yayımlanmayacak. Zorunlu alanlar işaretlenmiştir <strong class="required">*</strong></p>
+                            </div>
+                            <div class="aa-contact-form">
+                                <form class="contactform">
+                                    <p class="comment-form-author">
+                                        <label for="author">Ad Soyad<span class="required">*</span></label>
+
+                                        @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+
+                                    </p>
+                                    <p class="comment-form">
+                                        <label for="email">Email <span class="required">*</span></label>
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @name = "author", @type = "email", @class = "form-control" } })
+                                    </p>
+                                    <p class="comment-form-author">
+                                        <label for="author">Konu <span class="required">*</span></label>
+
+                                        @Html.EditorFor(model => model.Konu, new { htmlAttributes = new { @name = "author", @class = "form-control" } })
+
+                                    </p>
+                                    <p class="comment-form-comment">
+                                        <label for="comment">Mesaj </label>
+                                        @Html.TextAreaFor(model => model.Text, 8, 45, new { @name = "comment", @class = "form-control" })
+                                    </p>
+                                    <p class="form-submit">
+                                        <input type="submit" name="submit" class="aa-browse-btn" value="Mesaj Gönder">
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

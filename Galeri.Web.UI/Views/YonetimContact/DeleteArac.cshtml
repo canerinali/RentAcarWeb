@@ -1,0 +1,86 @@
+﻿@using Dekorasyon.WebApp
+@model Entities.Aracistek
+@{
+    /**/
+
+    ViewBag.Title = "Mesaj Sil";
+}
+<div class="row">
+    <div class="container">
+        <div class="col-12">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>@ViewBag.Title</h2>
+                <h3>Silmek istediğinize emin misiniz?</h3>
+            </div>
+            <hr />
+            <dl class="col-10 text-lg">
+                <dt>
+                    @Html.DisplayNameFor(model => model.AdSoyad)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AdSoyad)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mail)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Mail)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Marka)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Marka)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Model)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Model)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Km)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Km)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fiyat)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Fiyat)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefon)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Telefon)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ModifiedOn)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ModifiedOn)
+                </dd>
+            </dl>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="form-actions no-color">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-danger">
+                                    <span class="fa fa-save"></span> Sil
+                                </button>
+                                <a href="/YonetimContact/AracistekIndex" class="btn btn-default">
+                                    <span class="fa fa-arrow-circle-left"></span>Back to List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
